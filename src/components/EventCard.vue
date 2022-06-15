@@ -1,7 +1,7 @@
 
 
 <template>
-    <div>
+    <div class="event">
         <h4>{{card.title}}</h4>
         <h5>Id: {{card.id}}</h5>
         <p>Date: {{card.date}}</p>
@@ -17,3 +17,15 @@
         }
     }
 </script>
+
+<style>
+    .event{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 3px rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 3%;
+    margin-top: 10px;
+  }
+</style>

@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <header>
     <div>
-      <nav>
+      <nav class="navigation">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/events">Events</RouterLink>
         
@@ -16,4 +16,8 @@ import { RouterLink, RouterView } from "vue-router";
   <RouterView />
 </template>
 
-<style></style>
+<style>
+  .navigation > *{
+    margin: 10px;
+  }
+</style>

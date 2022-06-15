@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
+    <div class="event-information__card">
         <h4>{{currentEvent.title}}</h4>
         <h5>Id: {{currentEvent.id}}</h5>
         <p>Date: {{currentEvent.date}}</p>
@@ -33,3 +33,15 @@
 
 }
 </script>
+
+<style>
+  .event-information__card{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 3px rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 3%;
+    margin-top: 10px;
+  }
+</style>

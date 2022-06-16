@@ -1,31 +1,23 @@
-<script setup>
-  import EventCard from '../components/EventCard.vue'
-  import json from '../data/events.json'
-  
-</script>
-
 <template>
   <div>
     <h1>These are events</h1>
   </div>
-  <EventCard @click="alertEvents" v-for="event in events" :card="event"/>
+
+  <EventCard v-for="event in events" :card="event" :key="event.id" />
 </template>
 
 <script>
-      export default {    
-          data(){
-              return{
-                  events: json.events
-              }
-          },
-          methods: {
-            alertEvents(){
-              console.log(this.events)
-            }
-          }
-      }
+import EventCard from "../components/EventCard.vue";
+import json from "../events.json";
+
+export default {
+  components: {
+    EventCard,
+  },
+  data() {
+    return {
+      events: json.events,
+    };
+  },
+};
 </script>
-
-<style>
-
-</style>

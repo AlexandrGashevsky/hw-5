@@ -5,10 +5,10 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <header>
     <div>
-      <nav>
+      <nav class="naviagation">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/events">Events</RouterLink>
-        
+        <RouterLink to="/create-event">Create Event</RouterLink>
       </nav>
     </div>
   </header>
@@ -16,4 +16,14 @@ import { RouterLink, RouterView } from "vue-router";
   <RouterView />
 </template>
 
-<style></style>
+<script>
+export default {
+  name: 'App',
+}
+</script>
+
+<style>
+  .naviagation > *{
+    margin-right: 20px;
+  }
+</style>

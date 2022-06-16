@@ -1,5 +1,6 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+// You don't need to import these components, they're globally available
+// import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
@@ -8,7 +9,6 @@ import { RouterLink, RouterView } from "vue-router";
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/events">Events</RouterLink>
-        
       </nav>
     </div>
   </header>

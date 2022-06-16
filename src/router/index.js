@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import EventsView from '../views/EventsView.vue'
-import EventInformationView from '../views/EventInformationView.vue'
-import ErrorView from '../views/ErrorView.vue'
+import EventsView from "../views/EventsView.vue";
+import EventInformationView from "../views/EventInformationView.vue";
+import ErrorView from "../views/ErrorView.vue";
 const router = createRouter({
-  mode: 'history',
+  mode: "history",
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -15,18 +15,18 @@ const router = createRouter({
     {
       path: "/events",
       name: "events",
-      component: EventsView
+      component: EventsView,
     },
     {
       path: "/events/:id",
       name: "eventPage",
-      component: EventInformationView
+      component: EventInformationView,
     },
     {
-      path: '/:catchAll(.*)',
+      path: "/:catchAll(.*)",
       name: "errorPage",
-      component: ErrorView
-    }
+      component: ErrorView,
+    },
   ],
 });
 

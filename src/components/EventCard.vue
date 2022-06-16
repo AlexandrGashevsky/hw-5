@@ -1,7 +1,7 @@
 
 
 <template>
-    <div>
+    <div >
         <h4>{{card.title}}</h4>
         <h5>Id: {{card.id}}</h5>
         <p>Date: {{card.date}}</p>
@@ -17,3 +17,7 @@
         }
     }
 </script>
+
+<style>
+
+</style>

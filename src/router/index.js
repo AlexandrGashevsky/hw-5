@@ -3,9 +3,9 @@ import HomeView from "../views/HomeView.vue";
 import EventsView from '../views/EventsView.vue'
 import EventInformationView from '../views/EventInformationView.vue'
 import ErrorView from '../views/ErrorView.vue'
+import CreateEventsView from "../views/CreateEventsView.vue";
 const router = createRouter({
-  mode: 'history',
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
     {
       path: "/",
@@ -26,6 +26,11 @@ const router = createRouter({
       path: '/:catchAll(.*)',
       name: "errorPage",
       component: ErrorView
+    },
+    {
+      path: '/create-event',
+      name: "createEventPage",
+      component: CreateEventsView
     }
   ],
 });

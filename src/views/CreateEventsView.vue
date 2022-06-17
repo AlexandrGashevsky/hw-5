@@ -35,7 +35,7 @@
           data(){
             return {
               eventToAdd: {
-                id: this.$store.state.events[this.$store.state.events.length -1].id + 1,
+                id: 0,
                 title: '',
                 date:'',
                 time: '',
@@ -46,12 +46,15 @@
             }
           },
           methods: {
-            
             addEvent(){
-              this.$store.state.events.push(this.eventToAdd);
+              const newEvent = {...this.eventToAdd}
+              newEvent.id = this.allEvents[this.allEvents.length - 1].id + 1
+              this.$store.dispatch('addEvent', newEvent)
+              
+              console.log(this.$store.getters.allEvents);
             },
             deleteEvent(index){
-              this.$store.state.events.splice(index, 1)
+              this.$store.dispatch('deleteEvent', index)
             }
           }
       }

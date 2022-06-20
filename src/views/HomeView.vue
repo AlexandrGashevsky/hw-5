@@ -1,5 +1,5 @@
 <script setup>
-
+import axios from 'axios'
 </script>
 
 <template>
@@ -7,3 +7,10 @@
     <h1>This is the main page</h1>
   </main>
 </template>
+
+<script>
+export default {
+
+}
+
+</script>

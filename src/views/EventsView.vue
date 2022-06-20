@@ -1,6 +1,6 @@
 <script setup>
   import EventCard from '../components/EventCard.vue'
- 
+  import Pagination from '../components/Pagination.vue'
   
 </script>
 
@@ -9,30 +9,57 @@
     <h1>These are events</h1>
   </div>
   <div class="events-list">
-    <div class="events-list__element" v-for="event in allEvents">
-      <EventCard :card="event"/>
+    <div class="events-list__element" v-for="(event, index) in allEvents" v-show="showPage(currentPage, index)">
+      <EventCard  :card="event"/>
     </div>
   </div>
+  <Pagination @click="coutData" :n="$store.getters.allEvents.length"/>
 </template>
 
 <script>
-      export default {    
-          
+      export default {
+          data(){
+            return{
+              currentPage: 0
+            }
+          },
           methods: {
-            
+            showPage(currentPageNumber, index){
+              if(currentPageNumber*3 > index || (currentPageNumber+1)*3 <= index){
+                return false;
+              } else {
+                return true;
+              }
+            },
+            coutData(event){
+              
+              const value = event.target.innerText
+              if(!(value.includes("←") && value.includes("→"))){
+                if(value == "←"){
+                    this.currentPage -= 1;
+                } else if(value == "→") {
+                  this.currentPage += 1;
+                  if(this.currentPage >= Math.ceil(this.allEvents.length/3)){
+                    this.currentPage = 0;
+                  } 
+                } else {
+                  this.currentPage = parseInt(value) - 1;
+                }
+              }
+              console.log(Array.isArray(event.target.innerText));
+            }
           },
           computed: {
             allEvents(){
               return this.$store.getters.allEvents
-            },
-            
           }
+      }
       }
 </script>
 
 <style>
   .events-list{
-    display: grid;
+    display: block;
     grid-template-columns: 400px 400px;
     width: 800px;
     margin-left: auto;

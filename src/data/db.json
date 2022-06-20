@@ -1,0 +1,31 @@
+{
+  "events": [
+    {
+      "id": 8,
+      "title": "",
+      "date": "",
+      "time": "",
+      "location": "",
+      "description": "",
+      "organizer": "Current User"
+    },
+    {
+      "id": 9,
+      "title": "",
+      "date": "",
+      "time": "",
+      "location": "",
+      "description": "",
+      "organizer": "Current User"
+    },
+    {
+      "id": 10,
+      "title": "",
+      "date": "",
+      "time": "",
+      "location": "",
+      "description": "",
+      "organizer": "Current User"
+    }
+  ]
+}

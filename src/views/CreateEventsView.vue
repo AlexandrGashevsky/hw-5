@@ -48,7 +48,7 @@
           },
           data(){
             return {
-               currentPage: 0,
+              currentPage: 0,
               eventToAdd: {
                 id: 0,
                 title: '',

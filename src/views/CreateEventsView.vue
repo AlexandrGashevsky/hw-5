@@ -9,10 +9,10 @@
   </div>
   <div class="create-new-events__events">
     
-    <div class="event" v-for="(event, index) in allEvents" v-show="showPage(currentPage, index)">
+    <div class="event" v-for="(event, index) in allEvents" v-show="showPage(currentPage, index)" :key="event.id">
       <EventCard :card="event"/>
       <button @click="deleteEvent(index)">Delete</button>
-      <button @click="editEvent(index)">Edit</button>
+      <button @click="eventToEdit.id = event.id">Edit</button>
     </div>
     <div class="add-new-event">
       <h4>Add new event</h4>
@@ -25,7 +25,7 @@
     </div>
     <div class="add-new-event">
       <h4>Edit selected event</h4>
-      <input v-model="eventToEdit.id" placeholder="Id" type="number"/>
+      <input v-model="eventToEdit.id" placeholder="Id" type="number" disabled="disabled"/>
       <input v-model="eventToEdit.title" placeholder="Title" type="text"/>
       <input v-model="eventToEdit.date" type="date"/>
       <input v-model="eventToEdit.time" type="time"/>
@@ -48,6 +48,7 @@
           },
           data(){
             return {
+             
               currentPage: 0,
               eventToAdd: {
                 id: 0,

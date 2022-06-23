@@ -67,7 +67,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
   .events-list__element{
     width: 350px;
     margin-left: auto;

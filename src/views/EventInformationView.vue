@@ -1,5 +1,4 @@
 <script setup>
-  import json from '../data/events.json'
 </script>
 
 <template>
@@ -18,7 +17,8 @@
     export default {
         data () {
             return {
-                currentEvent: json.events[this.$route.params.id-1]
+                currentEvent: this.$store.getters.allEvents[this.getIndex(this.$store.getters.allEvents, this.$route.params.id)]
+               
             }
         },
         methods: {
@@ -28,6 +28,10 @@
                 } else {
                     return org.name;
                 }
+            },
+            getIndex(myArray, i){
+              const index = myArray.findIndex(item => item.id == i);
+                return index;
             }
         },
 

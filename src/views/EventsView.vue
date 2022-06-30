@@ -9,7 +9,7 @@
     <h1>These are events</h1>
   </div>
   <div class="events-list">
-    <div class="events-list__element" v-for="(event, index) in allEvents" v-show="showPage(currentPage, index)">
+    <div class="events-list__element" v-for="(event, index) in allEvents" v-show="showPage(currentPage, index)" :key="event.id">
       <EventCard  :card="event"/>
     </div>
   </div>
@@ -37,6 +37,9 @@
               if(!(value.includes("←") && value.includes("→"))){
                 if(value == "←"){
                     this.currentPage -= 1;
+                    if(this.currentPage < 0) {
+                      this.currentPage = 0;
+                    }
                 } else if(value == "→") {
                   this.currentPage += 1;
                   if(this.currentPage >= Math.ceil(this.allEvents.length/3)){
@@ -46,7 +49,6 @@
                   this.currentPage = parseInt(value) - 1;
                 }
               }
-              console.log(Array.isArray(event.target.innerText));
             }
           },
           computed: {
@@ -65,7 +67,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
   .events-list__element{
     width: 350px;
     margin-left: auto;
